@@ -22,10 +22,9 @@ const ctx = canvas.getContext('2d');
 const cardHeight = 400;
 const cardWidth = 280;
 // const numCards = 24;
-
-$(canvas).height(6 * cardHeight);
-$(canvas).width(6 * cardWidth);
-
+//
+// $(canvas).height(6 * cardHeight);
+// $(canvas).width(6 * cardWidth);
 
 for (x = 0; x < 6; x++) {
   for (y = 0; y < 6; y++) {
@@ -34,6 +33,8 @@ for (x = 0; x < 6; x++) {
     // const difficulty = getRandomInt(4, 12);
     const fromLeft = x * cardWidth;
     const fromTop = y * cardHeight;
+
+    console.log(x * cardWidth, y * cardHeight, cardWidth, cardHeight)
     //
     ctx.fillStyle = 'white';
     ctx.fillRect(x * cardWidth, y * cardHeight, cardWidth, cardHeight);
@@ -41,13 +42,13 @@ for (x = 0; x < 6; x++) {
     ctx.fillStyle = 'black';
     ctx.strokeRect(x * cardWidth, y * cardHeight, cardWidth, cardHeight);
     //
-    // ctx.textAlign = 'center';
-    // ctx.textBaseline = 'middle';
-    // ctx.font = '50px sans-serif';
-    // ctx.fillText(bonus, fromLeft + 200, fromTop + 200);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '50px sans-serif';
+    ctx.fillText(bonus, fromLeft + cardWidth/2, fromTop + cardHeight/2 - 20);
     //
-    // ctx.font = '30px sans-serif';
-    // ctx.fillText(randomMove(), fromLeft + 200, fromTop + 30);
+    ctx.font = '30px sans-serif';
+    ctx.fillText(ability, fromLeft + cardWidth/2, fromTop + cardWidth/2 + 100);
     // ctx.fillText(randomMove(), fromLeft + 200, fromTop + 370);
     //
     // ctx.textAlign = 'left';
